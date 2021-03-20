@@ -18,7 +18,7 @@ jobs:
 
       - name: Bug label removed
         uses: alex-page/github-project-automation-plus@v0.3.0
-        if: github.event.action == 'unlabeled' && contains(github.event.issue.labels.*.name, 'bug')
+        if: github.event.action == 'unlabeled'
         with:
           project: Testboard
           column: To assign
