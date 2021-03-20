@@ -15,7 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Assign to corresponding
     steps:
-    - name: Assign new bug issue to bug project board
-      if: github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'bug')
+    - name: Assign to One Project
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug')
       with:
-        project: https://github.com/GilgusMaximus/gilgusmaximus/projects/1
+        project: 'https://github.com/GilgusMaximus/gilgusmaximus/projects/1'
+        column_name: 'To assign'
+        
