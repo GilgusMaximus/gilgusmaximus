@@ -15,7 +15,7 @@
      steps:
      - name: Assign NEW issues and NEW pull requests to project 2
        uses: srggrs/assign-one-project-github-action@1.2.0
-       if: github.event.action == 'opened'
+       if: github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug')
        with:
          project: 'https://github.com/GilgusMaximus/gilgusmaximus/projects/1'
          column_name: 'To assign'
