@@ -6,7 +6,7 @@
    pull_request:
      types: [opened, labeled]
  env:
-   MY_GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+   GITHUB_TOKEN: ${{ secrets.Test }}
 
  jobs:
    assign_one_project:
