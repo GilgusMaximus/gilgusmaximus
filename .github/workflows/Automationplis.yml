@@ -7,7 +7,6 @@ on:
 jobs:
   automate-project-columns:
     runs-on: ubuntu-latest
-    action: delete
     steps:
       - name: New bug issue
         uses: alex-page/github-project-automation-plus@v0.3.0
@@ -16,11 +15,13 @@ jobs:
           project: Testboard
           column: To assign
           repo-token: ${{ secrets.Test }}
+          action: update
 
       - name: Bug label removed
         uses: alex-page/github-project-automation-plus@v0.3.0
         if: github.event.action == 'unlabeled'
         with:
+          action: delete
           project: Testboard
           column: To assign
           repo-token: ${{ secrets.Test }}
