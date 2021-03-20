@@ -20,5 +20,8 @@ jobs:
         uses: alex-page/github-project-automation-plus@v0.3.0
         if: github.event.action == 'unlabeled'
         with:
-          repo-token: ${{ secrets.Test }}
           action: delete
+          project: Testboard
+          column: To assign
+          repo-token: ${{ secrets.Test }}
+          
