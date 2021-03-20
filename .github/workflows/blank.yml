@@ -1,24 +1,24 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+#name: CI
 
 # Controls when the action will run. 
-on:
+#on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  issues:
-    types: [created]
+  #issues:
+ #   types: [created]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
+#jobs:
   # This workflow contains a single job called "build"
-  assign_one_project:
-    runs-on: ubuntu-latest
-    name: Assign to corresponding
-    steps:
-    - name: Assign to One Project
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug')
-      with:
-        project: 'https://github.com/GilgusMaximus/gilgusmaximus/projects/1'
-        column_name: 'To assign'
+ # assign_one_project:
+ #   runs-on: ubuntu-latest
+ #   name: Assign to corresponding
+ #   steps:
+ ##   - name: Assign to One Project
+#      uses: srggrs/assign-one-project-github-action@1.2.1
+#      if: github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug')
+#      with:
+#        project: 'https://github.com/GilgusMaximus/gilgusmaximus/projects/1'
+#        column_name: 'To assign'
         
