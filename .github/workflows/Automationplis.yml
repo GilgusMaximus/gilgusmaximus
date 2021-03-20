@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: New bug issue
-        uses: alex-page/github-project-automation-plus@v0.3.0
+        uses: alex-page/github-project-automation-plus@v0.5.1
         if: github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'bug')
         with:
           project: Testboard
@@ -18,7 +18,7 @@ jobs:
           action: update
 
       - name: Bug label removed
-        uses: alex-page/github-project-automation-plus@v0.3.0
+        uses: alex-page/github-project-automation-plus@v0.5.1
         if: github.event.action == 'unlabeled'
         with:
           action: delete
