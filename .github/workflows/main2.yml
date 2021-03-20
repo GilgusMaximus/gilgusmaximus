@@ -19,7 +19,6 @@ jobs:
     steps:
     - name: Assign to One Project
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug')
       with:
         project: 'https://github.com/GilgusMaximus/gilgusmaximus/projects/1'
         column_name: 'To assign'
