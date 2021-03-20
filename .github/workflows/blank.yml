@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  issues:
+    types: [labeled]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  assign_one_project:
+    runs-on: ubuntu-latest
+    name: Assign to corresponding
+    steps:
+    - name: Assign new bug issue to bug project board
+      if: github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'bug')
+      with:
+        project: https://github.com/GilgusMaximus/gilgusmaximus/projects/1
